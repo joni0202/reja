@@ -1,18 +1,65 @@
-// B - task
+// C -task
 
-function countDigitals(text) {
-  if ((howmuch = text.match(/\d/g))) {
-    // (/\w/g) - bu har bir simbolni ushlab berarkan
-    // (/\w.(s)/g) - bu 's' harfini ushlab beryabti
-    // (/\D/g)  - bu har bir harf larni ushlab beryabti
-    // (/\d+/g)  - bu har bir son larni ushlab beryabti (raqamlarni emas)
-    console.log(howmuch.length);
-  } else {
-    console.log("bu textda raqamlar qatnashmagan.");
+const moment = require("moment");
+
+class Shop {
+  non = 0;
+  cola = 0;
+  lagmon = 0;
+
+  qoldiq() {
+    console.log(
+      "Hozzir",
+      moment().format("HH:mm"),
+      `da do'konda ${this.non} ta non, ${this.cola} ta cola va ${this.lagmon} ta lagmon bor`
+    );
+  }
+
+  qabul(non, cola, lagmon) {
+    this.non += non;
+    this.cola += cola;
+    this.lagmon += lagmon;
+    console.log(
+      `do'konga ${this.non + non}  ta non, ${this.cola + cola} ta cola va ${
+        this.lagmon + lagmon
+      } ta lagmon qabul qilindi `
+    );
+  }
+
+  sotish(non, cola, lagmon) {
+    this.non -= non;
+    this.cola -= cola;
+    this.lagmon -= lagmon;
+    console.log(
+      `do'konda ${this.non - non}  ta non, ${this.cola - cola} ta cola va ${
+        this.lagmon - lagmon
+      } ta lagmon qoldi `
+    );
   }
 }
 
-countDigitals("as87ds87dsf78asd78");
+const shop = new Shop();
+
+shop.qabul(2, 3, 5);
+shop.qoldiq();
+
+// shop.qoldiq();
+
+// B - task
+
+// function countDigitals(text) {
+//   if ((howmuch = text.match(/\d/g))) {
+//     // (/\w/g) - bu har bir simbolni ushlab berarkan
+//     // (/\w.(s)/g) - bu 's' harfini ushlab beryabti
+//     // (/\D/g)  - bu har bir harf larni ushlab beryabti
+//     // (/\d+/g)  - bu har bir son larni ushlab beryabti (raqamlarni emas)
+//     console.log(howmuch.length);
+//   } else {
+//     console.log("bu textda raqamlar qatnashmagan.");
+//   }
+// }
+
+// countDigitals("as87ds87dsf78asd78");
 
 //A-TASK
 
