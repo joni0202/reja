@@ -1,47 +1,61 @@
-// C -task
+// d- task
 
-const moment = require("moment");
+function checkText(first_text, second_text) {
+  if (first_text.length !== second_text.length) return false;
 
-class Shop {
-  non = 0;
-  cola = 0;
-  lagmon = 0;
+  // Harflarni alohida qilib saralash va taqqoslash
+  let first_example = first_text.split("").sort().join("");
+  let second_example = second_text.split("").sort().join("");
 
-  qoldiq() {
-    console.log(
-      "Hozzir",
-      moment().format("HH:mm"),
-      `da do'konda ${this.non} ta non, ${this.cola} ta cola va ${this.lagmon} ta lagmon bor`
-    );
-  }
-
-  qabul(non, cola, lagmon) {
-    this.non += non;
-    this.cola += cola;
-    this.lagmon += lagmon;
-    console.log(
-      `do'konga ${this.non + non}  ta non, ${this.cola + cola} ta cola va ${
-        this.lagmon + lagmon
-      } ta lagmon qabul qilindi `
-    );
-  }
-
-  sotish(non, cola, lagmon) {
-    this.non -= non;
-    this.cola -= cola;
-    this.lagmon -= lagmon;
-    console.log(
-      `do'konda ${this.non - non}  ta non, ${this.cola - cola} ta cola va ${
-        this.lagmon - lagmon
-      } ta lagmon qoldi `
-    );
-  }
+  return first_example === second_example;
 }
 
-const shop = new Shop();
+console.log(checkText("nimadur", "nimadru"));
 
-shop.qabul(2, 3, 5);
-shop.qoldiq();
+// // C -task
+
+// const moment = require("moment");
+
+// class Shop {
+//   non = 0;
+//   cola = 0;
+//   lagmon = 0;
+
+//   qoldiq() {
+//     console.log(
+//       "Hozzir",
+//       moment().format("HH:mm"),
+//       `da do'konda ${this.non} ta non, ${this.cola} ta cola va ${this.lagmon} ta lagmon bor`
+//     );
+//   }
+
+//   qabul(non, cola, lagmon) {
+//     this.non += non;
+//     this.cola += cola;
+//     this.lagmon += lagmon;
+//     console.log(
+//       `do'konga ${this.non + non}  ta non, ${this.cola + cola} ta cola va ${
+//         this.lagmon + lagmon
+//       } ta lagmon qabul qilindi `
+//     );
+//   }
+
+//   sotish(non, cola, lagmon) {
+//     this.non -= non;
+//     this.cola -= cola;
+//     this.lagmon -= lagmon;
+//     console.log(
+//       `do'konda ${this.non - non}  ta non, ${this.cola - cola} ta cola va ${
+//         this.lagmon - lagmon
+//       } ta lagmon qoldi `
+//     );
+//   }
+// }
+
+// const shop = new Shop();
+
+// shop.qabul(2, 3, 5);
+// shop.qoldiq();
 
 // shop.qoldiq();
 
