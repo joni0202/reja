@@ -1,16 +1,32 @@
-// d- task
+// E-task
 
-function checkText(first_text, second_text) {
-  if (first_text.length !== second_text.length) return false;
+function getReversed(text) {
+  const charArray = text.split("");
 
-  // Harflarni alohida qilib saralash va taqqoslash
-  let first_example = first_text.split("").sort().join("");
-  let second_example = second_text.split("").sort().join("");
+  const reversedArray = charArray.reverse();
 
-  return first_example === second_example;
+  const reversedText = reversedArray.join("");
+
+  return reversedText;
 }
 
-console.log(checkText("nimadur", "nimadru"));
+const exampleText = "hello";
+const reversedResult = getReversed(exampleText);
+console.log(reversedResult);
+
+// d- task
+
+// function checkText(first_text, second_text) {
+//   if (first_text.length !== second_text.length) return false;
+
+//   // Harflarni alohida qilib saralash va taqqoslash
+//   let first_example = first_text.split("").sort().join("");
+//   let second_example = second_text.split("").sort().join("");
+
+//   return first_example === second_example;
+// }
+
+// console.log(checkText("nimadur", "nimadru"));
 
 // // C -task
 
