@@ -1,5 +1,4 @@
-const http = require("http");
-
+const http = require("http"); // server qurish uchun kerak bo'ladi.
 const mongodb = require("mongodb");
 
 let db;
@@ -16,7 +15,7 @@ mongodb.connect(
     if (err) console.log("ERROR on connection MongoDB");
     else {
       console.log("MongoDB connection secceed");
-      module.exports = client;
+      module.exports = client; // client bu Object uni .db()degan metodi yani QALAMI (CRUD) i bor, yana bu bizga rejani to'liq qo'lga olib beradi
 
       const app = require("./app");
       const server = http.createServer(app);
@@ -29,3 +28,23 @@ mongodb.connect(
     }
   }
 );
+
+/* 
+
+FRONTEND DEVELOPMENT: BSSR (EJS/HTML)    |    SPA (REACT/JSON)
+
+API: 
+    1) TYPES: Traditional API, Rest API, GraphQL API ...
+    2) METHOD: GET & POST
+    3) STRUCTURE: Header & Body 
+
+
+PATTERN: Architecture pattern & design pattern
+
+CRUD:
+GET => READ
+POST => CREATE, UPDATE, DELETE
+
+
+// CLUSTER => DATABASE => COLLECTION => DOCUMENT => DATASET
+*/
