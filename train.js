@@ -1,18 +1,32 @@
-// E-task
+// F -task
 
-function getReversed(text) {
-  const charArray = text.split("");
-
-  const reversedArray = charArray.reverse();
-
-  const reversedText = reversedArray.join("");
-
-  return reversedText;
+function birxilXarf(input) {
+  const arr = input.split("");
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.indexOf(arr[i], i + 1) !== -1) return true;
+  }
+  return false;
 }
 
-const exampleText = "hello";
-const reversedResult = getReversed(exampleText);
-console.log(reversedResult);
+console.log(birxilXarf("hello"));
+console.log("-----------");
+console.log(birxilXarf("nimadur"));
+
+// E-task
+
+// function getReversed(text) {
+//   const charArray = text.split("");
+
+//   const reversedArray = charArray.reverse();
+
+//   const reversedText = reversedArray.join("");
+
+//   return reversedText;
+// }
+
+// const exampleText = "hello";
+// const reversedResult = getReversed(exampleText);
+// console.log(reversedResult);
 
 // d- task
 
